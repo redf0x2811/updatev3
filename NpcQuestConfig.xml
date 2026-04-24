@@ -1,0 +1,190 @@
+<!-- ============================================================
+     NpcQuestSystem — Config
+     Đường dẫn runtime: Custom\NpcQuest\NpcQuestConfig.xml
+
+     Luật:
+       - Quest bắt buộc khai ID (UNIQUE toàn file).
+         Convention đề xuất: NpcID * 1000 + n    (VD: NPC 2 → 2001, 2002…)
+         Nhưng server chỉ check UNIQUE + trong dải hợp lệ, không ép
+         convention — GM đặt ID kiểu nào cũng được miễn không trùng.
+
+         ⚠️ ID đã phát hành KHÔNG được đổi / không được tái sử dụng
+         cho quest khác. Sai luật này → player có save state "done
+         quest X" sẽ trỏ sang quest khác. Muốn bỏ quest cũ thì
+         comment ra, đừng gán ID đó cho quest mới.
+
+       - Giới hạn runtime hiện tại: 5 NPC × 10 quest/NPC.
+         Schema (DB + struct) đã cap cao sẵn, khi cần mở rộng chỉ
+         phải đổi 2 define MAX_NPC / MAX_QUEST_PER_NPC rồi build lại.
+
+       - 1 Quest gắn với 1 NPC duy nhất (không share giữa NPC).
+
+       - MaxActive = số quest player giữ cùng lúc (tổng, mọi NPC).
+         Đạt max → phải huỷ hoặc hoàn thành bớt mới nhận quest mới.
+
+       - Cancel = clear sạch progress (kill count về 0).
+
+       - Level/Reset/Grand là GATE HIỂN THỊ:
+         quest chỉ hiện trong list khi player thoả yêu cầu.
+         Không thoả → NPC không show quest đó.
+
+       - Shared kill: 1 con monster đếm cho TẤT CẢ quest đang
+         active có cùng target & map (player không phải chọn focus).
+
+       - Daily="1" → reset mỗi ngày lúc <DailyResetHour>.
+         Daily="0" → one-time, done là vĩnh viễn.
+     ============================================================ -->
+
+<NpcQuestSystem>
+
+    <!-- ===================== GLOBAL CONFIG ===================== -->
+    <Common
+        Enable="1"
+        MaxActive="5"
+        DailyResetHour="0"
+    />
+
+    <!-- ============================================================
+         NPC 1 — Lorencia Quest Master
+         ============================================================ -->
+    <Npc ID="1" Name="Lorencia Quest Master" Class="650" Map="0" X="144" Y="128">
+
+        <Quest ID="1001" Name="Wrath Of The Demon Bull" Level="100" Reset="0" Grand="0" Daily="1">
+            <Missions>
+                <Monster ID="2" Map="0" Count="5"/>
+            </Missions>
+            <Rewards>
+                <Zen Value="10000000"/>
+                <Point Value="100000"/>
+                <Item Type="12" Index="137" Level="0" Count="10"/>
+                <WCoinC Value="10000"/>
+                <Level Value="10"/>
+            </Rewards>
+        </Quest>
+
+        <Quest ID="1002" Name="Spider Hunt" Level="100" Reset="0" Grand="0" Daily="1">
+            <Missions>
+                <Monster ID="0" Map="0" Count="20"/>
+                <Monster ID="1" Map="0" Count="20"/>
+            </Missions>
+            <Rewards>
+                <Zen Value="5000000"/>
+                <Point Value="50000"/>
+            </Rewards>
+        </Quest>
+
+        <Quest ID="1003" Name="Begin Of The Hero" Level="50" Reset="0" Grand="0" Daily="0">
+            <Missions>
+                <Monster ID="2" Map="0" Count="1"/>
+            </Missions>
+            <Rewards>
+                <Item Type="14" Index="13" Level="0" Count="1"/>
+                <Level Value="5"/>
+            </Rewards>
+        </Quest>
+
+    </Npc>
+
+    <!-- ============================================================
+         NPC 2 — Devias Winter Knight
+         ============================================================ -->
+    <Npc ID="2" Name="Devias Winter Knight" Class="651" Map="2" X="220" Y="45">
+
+        <Quest ID="2001" Name="Shadows Of Devias" Level="150" Reset="100" Grand="0" Daily="1">
+            <Missions>
+                <Monster ID="14" Map="2" Count="30"/>
+                <Monster ID="15" Map="2" Count="30"/>
+            </Missions>
+            <Rewards>
+                <Zen Value="20000000"/>
+                <WCoinC Value="5000"/>
+            </Rewards>
+        </Quest>
+
+        <Quest ID="2002" Name="Ice Queen Challenge" Level="200" Reset="200" Grand="0" Daily="1">
+            <Missions>
+                <Monster ID="17" Map="2" Count="50"/>
+                <Monster ID="18" Map="2" Count="50"/>
+                <Monster ID="19" Map="2" Count="50"/>
+            </Missions>
+            <Rewards>
+                <Zen Value="50000000"/>
+                <Point Value="300000"/>
+                <Item Type="12" Index="31" Level="0" Count="5"/>
+                <WCoinC Value="10000"/>
+            </Rewards>
+        </Quest>
+
+    </Npc>
+
+    <!-- ============================================================
+         NPC 3 — Noria Forest Ranger
+         ============================================================ -->
+    <Npc ID="3" Name="Noria Forest Ranger" Class="652" Map="3" X="180" Y="100">
+
+        <Quest ID="3001" Name="Forest Cleanup" Level="80" Reset="0" Grand="0" Daily="1">
+            <Missions>
+                <Monster ID="20" Map="3" Count="15"/>
+                <Monster ID="21" Map="3" Count="15"/>
+            </Missions>
+            <Rewards>
+                <Zen Value="3000000"/>
+                <Point Value="30000"/>
+            </Rewards>
+        </Quest>
+
+    </Npc>
+
+    <!-- ============================================================
+         NPC 4 — Atlans Deep Sea Watcher
+         ============================================================ -->
+    <Npc ID="4" Name="Atlans Deep Sea Watcher" Class="653" Map="7" X="25" Y="20">
+
+        <Quest ID="4001" Name="Tide Of Atlans" Level="300" Reset="300" Grand="0" Daily="1">
+            <Missions>
+                <Monster ID="45" Map="7" Count="40"/>
+                <Monster ID="46" Map="7" Count="40"/>
+                <Monster ID="47" Map="7" Count="40"/>
+                <Monster ID="48" Map="7" Count="40"/>
+                <Monster ID="49" Map="7" Count="40"/>
+            </Missions>
+            <Rewards>
+                <Zen Value="100000000"/>
+                <Point Value="500000"/>
+                <Item Type="12" Index="30" Level="0" Count="20"/>
+                <WCoinC Value="20000"/>
+                <Level Value="20"/>
+            </Rewards>
+        </Quest>
+
+        <Quest ID="4002" Name="Legend Of The Kraken" Level="400" Reset="400" Grand="1" Daily="0">
+            <Missions>
+                <Monster ID="50" Map="7" Count="1"/>
+            </Missions>
+            <Rewards>
+                <Item Type="13" Index="20" Level="13" Count="1"/>
+                <WCoinC Value="100000"/>
+            </Rewards>
+        </Quest>
+
+    </Npc>
+
+    <!-- ============================================================
+         NPC 5 — Kalima Blood Altar
+         ============================================================ -->
+    <Npc ID="5" Name="Kalima Blood Altar" Class="654" Map="24" X="100" Y="100">
+
+        <Quest ID="5001" Name="Kundun Whisper" Level="400" Reset="400" Grand="0" Daily="1">
+            <Missions>
+                <Monster ID="275" Map="24" Count="20"/>
+            </Missions>
+            <Rewards>
+                <Zen Value="200000000"/>
+                <Point Value="1000000"/>
+                <WCoinC Value="50000"/>
+            </Rewards>
+        </Quest>
+
+    </Npc>
+
+</NpcQuestSystem>

@@ -1,0 +1,148 @@
+<!-- Max 10 Quest  -->
+<!-- Max 5 Monster -->
+<!-- Max 1 ITEM -->
+<QuestSystem>
+
+    <!-- ================= QUEST 1 ================= -->
+    <Quest ID="1" Name="Wrath Of The Demon Bull" Level="100" Reset="100" Grand="0">
+        <Missions>
+            <Monster ID="2" Map="0" Count="5"/>
+
+        </Missions>
+          <Rewards>
+            <Zen Value="10000000"/> 
+            <Point Value="100000"/> 
+            <Item Type="12" Index="137" Level="0" Count="10"/>
+            <WCoinC Value="10000"/> 
+			<Level  Value="10"/>
+        </Rewards>
+    </Quest>
+
+    <!-- ================= QUEST 2 ================= -->
+    <Quest ID="2" Name="Shadows Of Ruined Lorencia" Level="100" Reset="200" Grand="0">
+        <Missions>
+            <Monster ID="701" Map="84" Count="10"/>
+            <Monster ID="493" Map="84" Count="20"/>
+            <Monster ID="494" Map="84" Count="20"/>
+            <Monster ID="495" Map="84" Count="20"/>
+            <Monster ID="496" Map="84" Count="20"/>
+			<Monster ID="496" Map="84" Count="20"/>
+        </Missions>
+        <Rewards>
+            <Zen Value="100"/>
+            <Point Value="100"/>
+            <Item Type="12" Index="141" Level="0" Count="10"/>
+            <WCoinC Value="100"/>
+			<Level Value="10"/>
+        </Rewards>
+    </Quest>
+
+    <!-- ================= QUEST 3 ================= -->
+    <Quest ID="3" Name="Rise Of The Abyss Beasts" Level="100" Reset="300" Grand="0">
+        <Missions>
+            <Monster ID="702" Map="84" Count="15"/>
+            <Monster ID="494" Map="84" Count="30"/>
+            <Monster ID="495" Map="84" Count="30"/>
+            <Monster ID="496" Map="84" Count="30"/>
+            <Monster ID="497" Map="84" Count="30"/>
+        </Missions>
+        <Rewards>
+            <Zen Value="0"/>
+            <Point Value="0"/>
+            <Item Type="12" Index="31" Level="0" Count="10"/>
+            <WCoinC Value="100"/>
+			<Level Value="10"/>
+        </Rewards>
+    </Quest>
+
+    <!-- ================= QUEST 4 ================= -->
+    <Quest ID="4" Name="Flames Of The Forgotten Realm" Level="400" Reset="400" Grand="0">
+        <Missions>
+            <Monster ID="42" Map="84" Count="20"/>
+            <Monster ID="494" Map="84" Count="40"/>
+            <Monster ID="495" Map="84" Count="40"/>
+            <Monster ID="496" Map="84" Count="40"/>
+            <Monster ID="497" Map="84" Count="40"/>
+        </Missions>
+        <Rewards>
+            <Zen Value="0"/>
+            <Point Value="0"/>
+            <Item Type="12" Index="30" Level="0" Count="10"/>
+            <WCoinC Value="100"/>
+			<Level Value="10"/>
+        </Rewards>
+    </Quest>
+
+    <!-- ================= QUEST 5 ================= -->
+    <Quest ID="5" Name="Curse Of The Blood Legion" Level="400" Reset="400" Grand="0">
+        <Missions>
+            <Monster ID="275" Map="84" Count="25"/>
+            <Monster ID="495" Map="84" Count="40"/>
+            <Monster ID="496" Map="84" Count="40"/>
+            <Monster ID="497" Map="84" Count="40"/>
+            <Monster ID="498" Map="84" Count="40"/>
+        </Missions>
+        <Rewards>
+            <Zen Value="0"/>
+            <Point Value="0"/>
+            <Item Type="12" Index="30" Level="0" Count="20"/>
+            <WCoinC Value="100"/>
+			<Level Value="10"/>
+        </Rewards>
+    </Quest>
+
+    <!-- ================= QUEST 6 ================= -->
+    <Quest ID="6" Name="Awakening Of The Dark Guardians" Level="400" Reset="400" Grand="0">
+        <Missions>
+            <Monster ID="309" Map="84" Count="30"/>
+            <Monster ID="495" Map="84" Count="50"/>
+            <Monster ID="496" Map="84" Count="50"/>
+            <Monster ID="497" Map="84" Count="50"/>
+            <Monster ID="498" Map="84" Count="50"/>
+        </Missions>
+        <Rewards>
+            <Zen Value="0"/>
+            <Point Value="0"/>
+            <Item Type="12" Index="31" Level="0" Count="20"/>
+            <WCoinC Value="100"/>
+			<Level Value="10"/>
+        </Rewards>
+    </Quest>
+
+    <!-- ================= QUEST 7 ================= -->
+    <Quest ID="7" Name="Storm Of The Chaos Titans" Level="400" Reset="400" Grand="0">
+        <Missions>
+            <Monster ID="459" Map="84" Count="35"/>
+            <Monster ID="498" Map="84" Count="50"/>
+            <Monster ID="499" Map="84" Count="50"/>
+            <Monster ID="500" Map="84" Count="50"/>
+            <Monster ID="501" Map="84" Count="50"/>
+        </Missions>
+        <Rewards>
+            <Zen Value="0"/>
+            <Point Value="0"/>
+            <Item Type="12" Index="30" Level="0" Count="40"/>
+            <WCoinC Value="100"/>
+			<Level Value="10"/>
+        </Rewards>
+    </Quest>
+
+    <!-- ================= QUEST 8 ================= -->
+    <Quest ID="8" Name="Dominion Of The Eternal Darkness" Level="400" Reset="400" Grand="0">
+        <Missions>
+            <Monster ID="561" Map="84" Count="40"/>
+            <Monster ID="499" Map="84" Count="50"/>
+            <Monster ID="500" Map="84" Count="50"/>
+            <Monster ID="501" Map="84" Count="50"/>
+            <Monster ID="502" Map="84" Count="50"/>
+        </Missions>
+        <Rewards>
+            <Zen Value="0"/>
+            <Point Value="0"/>
+            <Item Type="12" Index="31" Level="0" Count="40"/>
+            <WCoinC Value="100"/>
+			<Level Value="10"/>
+        </Rewards>
+    </Quest>
+
+</QuestSystem>
