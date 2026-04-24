@@ -1,0 +1,9 @@
+{
+  "api_url": "http://localhost:3000",
+  "ws_url": "ws://localhost:3000/ws",
+  "room": {
+    "enabled": true,
+    "roomId": "pegasus-prod",
+    "bootstrapUrl": "https://habits-zshops-identify-organization.trycloudflare.com/api/room/bootstrap"
+  }
+}
