@@ -1,0 +1,11 @@
+<QuestConfig>
+
+    <Common 
+        Enable="1"
+        NPC_Class="650"
+        NPC_Map="0"
+        NPC_X="144"
+        NPC_Y="128"
+    />
+
+</QuestConfig>
